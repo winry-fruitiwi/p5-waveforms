@@ -17,6 +17,9 @@ version comments:
 
  */
 let font
+// So we have our font. But what about our waveforms?
+// tiger is a girl
+let tiger
 
 function preload() {
     font = loadFont('fonts/Meiryo-01.ttf')
@@ -25,8 +28,15 @@ function preload() {
 function setup() {
     createCanvas(640, 360)
     colorMode(HSB, 360, 100, 100, 100)
+
+    // ok my tiger wants to join the fun! Let's make her a fundamental.
+    tiger = new Waveform(0.1, height/4, 1, 0)
+    noFill()
+    stroke(0, 0, 100)
 }
 
 function draw() {
     background(209, 80, 30)
+    translate(0, height/2)
+    tiger.show()
 }
