@@ -33,15 +33,21 @@ class Waveform {
         // we want a sine wave shape
         beginShape()
 
-        // where are we drawing? let's creatively use i as our index!
         for (let x = 0; x < width; x += 1) {
             // we want an x-value and a y-value for our vertex.
             // x and our getValue function do just the job!
             vertex(x, this.getValue(x))
         }
 
+        // a super easy simplification O.o We'll have it in update.
+        // this.animationShift += this.ω
+
         endShape()
-        this.animationShift += 1
+
+    }
+
+    update() {
+        this.animationShift += this.ω
     }
 
 }
