@@ -13,6 +13,8 @@ class Waveform {
 
         // we need a phase shift!
         this.phaseShift = phaseShift
+        // we'll use a changing phase shift
+        this.animationShift = 0;
     }
 
 
@@ -21,7 +23,8 @@ class Waveform {
         // the general sine formula is:
         // amplitude * sin(b(x+phase_shift)) + y_intercept/average_y
         // We're interested in the value at this function.
-        return this.amplitude*-sin(TAU/this.T*(i + this.phaseShift))
+        return (this.amplitude*
+            -sin(TAU/this.T*(i + this.phaseShift + this.animationShift)))
     }
 
 
@@ -38,6 +41,7 @@ class Waveform {
         }
 
         endShape()
+        this.animationShift += 1
     }
 
 }

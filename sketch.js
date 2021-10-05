@@ -18,8 +18,8 @@ version comments:
  */
 let font
 // So we have our font. But what about our waveforms?
-// tiger is a girl
-let tiger
+// tiger is a girl, Elphanae is also a girl
+let tiger, elphanae
 
 function preload() {
     font = loadFont('fonts/Meiryo-01.ttf')
@@ -30,7 +30,10 @@ function setup() {
     colorMode(HSB, 360, 100, 100, 100)
 
     // ok my tiger wants to join the fun! Let's make her a fundamental.
+    // she says "hey, my mom should be the fundamental!"
     tiger = new Waveform(0.1, height/4, 1, 0)
+    // Elphanae, for some reason, wants to be really wavy.
+    elphanae = new Waveform(0, height/4, 20, 0)
     noFill()
     stroke(0, 0, 100)
 }
@@ -38,5 +41,9 @@ function setup() {
 function draw() {
     background(209, 80, 30)
     translate(0, height/2)
+    stroke(28, 69, 93)
     tiger.show()
+    stroke(0, 0, 57)
+    elphanae.show()
+    
 }
